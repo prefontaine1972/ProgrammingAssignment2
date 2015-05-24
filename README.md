@@ -1,4 +1,4 @@
-### Introduction
+# Introduction
 The second programming assignment required an R function designed to
 cache potentially time-consuming computations.  Taking the mean of a numeric vector is typically a fast
 operation.  However, matrix inversion is usually a costly computation and there may be some
@@ -9,7 +9,7 @@ can be looked up in the cache rather than recomputed. In this
 Programming Assignment the scoping rules of the R language were used
 to preserve state inside of an R object.
 
-### Caching the Inverse Matrix
+##Caching the Inverse Matrix
 
 The `<<-` operator can be used to
 assign a value to an object in an environment that is different from the
@@ -61,18 +61,17 @@ function.
   		m <- solve (matrix, ...)
   		x$setmatrix(m)  
   		m
-
 		}
 ```
 
-#Notes
+##Examples of Running the Code
 
 Computing the inverse of a square matrix can be done with the `solve`
 function in R. For example, assuming `X` is a square invertible matrix, then
 `solve(X)` returns its inverse. For this assignment, assume that the matrix supplied is always
-invertible.
+invertible.  When `<` is displayed the line is inputed into the command line, while # shows added commentary.
 
-##Example of Running the Code
+
 ```
 
 >a <- makeCacheMatrix()
