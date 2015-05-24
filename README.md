@@ -11,10 +11,12 @@ to preserve state inside of an R object.
 
 ### Caching the Inverse Matrix
 
-The `<<-` operator which can be used to
+The `<<-` operator can be used to
 assign a value to an object in an environment that is different from the
 current environment. Below are two functions that are used to create a
 special object that stores a matrix and caches its inverse matrix.
+
+##makeCacheMatrix
 
 `makeCacheMatrix`: This function creates a special "matrix" object, which is
 really a list containing a function to:
@@ -38,37 +40,40 @@ really a list containing a function to:
     }
 ```
 
-2.  `cacheSolve`: This function calculates the inverse of the special "matrix"
+##cacheSolve
+
+`cacheSolve`: This function calculates the inverse of the special "matrix"
 created with the above function. However, it first checks to see if the
 inverse has already been calculated. If so, it `get`s the inverse matrix from the
 cache and skips the computation. Otherwise, it calculates the inverse of
 the matrix and sets the value of the mean in the cache via the `setmatrix`
 function.
 
-<!-- -->
 
-  cacheSolve <- function(x = matrix(), ...) {
-  m <- x$getmatrix()
-  if(!is.null(m)) {
-    message("getting cache data")
-    return(m)
-  }
-  matrix <-x$get()
-  m <- solve (matrix, ...)
-  x$setmatrix(m)  
-  m
+```
+  		cacheSolve <- function(x = matrix(), ...) {
+  		m <- x$getmatrix()
+  		if(!is.null(m)) {
+    		message("getting cache data")
+    		return(m)
+ 		 }
+  		matrix <-x$get()
+  		m <- solve (matrix, ...)
+  		x$setmatrix(m)  
+  		m
 
-}
+		}
+```
 
-<!-- -->
+#Notes
 
-Notes: Computing the inverse of a square matrix can be done with the `solve`
+Computing the inverse of a square matrix can be done with the `solve`
 function in R. For example, assuming `X` is a square invertible matrix, then
 `solve(X)` returns its inverse. For this assignment, assume that the matrix supplied is always
 invertible.
 
-3.  Example of Running the Code
-<!-- -->
+##Example of Running the Code
+```
 
 >a <- makeCacheMatrix()
 
@@ -95,7 +100,7 @@ getting cache data
 [1,] -1.6666667  1.3333333
 [2,]  0.6666667 -0.3333333
 
-<!-- -->
+```
 
 
 
