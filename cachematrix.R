@@ -7,7 +7,8 @@
 ## name of the 2nd function with arguments 
 
 makeCacheMatrix <- function(x = matrix()) {
-  m <- NULL
+  
+    m <- NULL
   set <- function(y){
     x <<- y
     m <<- NULL
@@ -26,11 +27,14 @@ list (set=set, get=get, setmatrix=setmatrix, getmatrix=getmatrix)
 ## Further details on running this function will be provided in the README.md
 
 cacheSolve <- function(x = matrix(), ...) {
+## get the cached value
   m <- x$getmatrix()
+## if a cached value present return it  
   if(!is.null(m)) {
     message("getting cache data")
     return(m)
   }
+## if no cached value, calculate inverse and store in cache  
   matrix <-x$get()
   m <- solve (matrix, ...)
   x$setmatrix(m)  
