@@ -2,7 +2,7 @@
 The second programming assignment required an R function designed to
 cache potentially time-consuming computations.  Taking the mean of a numeric vector is typically a fast
 operation.  However, matrix inversion is usually a costly computation and there may be some
-benefit to caching the inverse of a matrix rather than computing it repeatedly, (e.g.
+benefit to caching the inverse of a matrix rather than computing it repeatedly (e.g.
 in a loop).  If the contents of a matrix are not changing, it may make
 sense to cache the value of the inverse matrix so that when we need it again it
 can be looked up in the cache rather than recomputed. In this
@@ -16,7 +16,7 @@ assign a value to an object in an environment that is different from the
 current environment. Below are two functions that are used to create a
 special object that stores a matrix and caches its inverse matrix.
 
-1.  `makeCacheMatrix`: This function creates a special "matrix" object, which is
+`makeCacheMatrix`: This function creates a special "matrix" object, which is
 really a list containing a function to:
 
 1.  set the value of the matrix
@@ -24,9 +24,9 @@ really a list containing a function to:
 3.  set the value of the inverse matrix
 4.  get the value of the inverse matrix
 
+<!-- -->
 
-
-'makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
    m <- NULL
    set <- function(y){
    x <<- y
@@ -36,7 +36,7 @@ get <- function() x
 setmatrix <- function(solve) m <<- solve
 getmatrix <- function() m
 list (set=set, get=get, setmatrix=setmatrix, getmatrix=getmatrix)
-}'
+}
 
 
 2.  `cacheSolve`: This function calculates the inverse of the special "matrix"
