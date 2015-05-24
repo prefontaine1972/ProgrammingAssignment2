@@ -68,8 +68,8 @@ function.
 
 Computing the inverse of a square matrix can be done with the `solve`
 function in R. For example, assuming `X` is a square invertible matrix, then
-`solve(X)` returns its inverse. For this assignment, assume that the matrix supplied is always
-invertible.  When `<` is displayed the line is inputed into the command line, while # shows added commentary.
+`solve(X)` returns its inverse. For this assignment, on was to assume that the matrix supplied was always
+invertible.  When `<` is displayed the line is inputed into the command line, while if '#' is added it shows additional commentary.
 
 
 ```
@@ -85,6 +85,7 @@ invertible.  When `<` is displayed the line is inputed into the command line, wh
 [2,]    1 -0.5
 
 #re-run to see if cached 
+
 >cache Solve(a)
 
 getting cache data
