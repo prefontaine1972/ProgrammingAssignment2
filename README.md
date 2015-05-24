@@ -25,17 +25,17 @@ really a list containing a function to:
 4.  get the value of the inverse matrix
 
 
-'makeCacheMatrix <- function(x = matrix()) {'
-   m <- NULL
-   set <- function(y){
-   x <<- y
-   m <<- NULL
-  }
-get <- function() x  
-setmatrix <- function(solve) m <<- solve
-getmatrix <- function() m
-list (set=set, get=get, setmatrix=setmatrix, getmatrix=getmatrix)
-}
+    makeCacheMatrix <- function(x = matrix()) {
+       m <- NULL
+       set <- function(y){
+       x <<- y
+       m <<- NULL
+      }
+    get <- function() x  
+    setmatrix <- function(solve) m <<- solve
+    getmatrix <- function() m
+    list (set=set, get=get, setmatrix=setmatrix, getmatrix=getmatrix)
+    }
 
 
 2.  `cacheSolve`: This function calculates the inverse of the special "matrix"
