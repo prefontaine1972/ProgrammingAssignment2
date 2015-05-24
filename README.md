@@ -14,7 +14,7 @@ to preserve state inside of an R object.
 The `<<-` operator can be used to
 assign a value to an object in an environment that is different from the
 current environment. Below are two functions that are used to create a
-special object that stores a matrix and caches its inverse matrix.
+special object that stores a matrix, calculates its inverse, and caches its inverse matrix.
 
 ##makeCacheMatrix
 
@@ -66,9 +66,7 @@ function.
 
 ##Examples of Running the Code
 
-Computing the inverse of a square matrix can be done with the `solve`
-function in R. For example, assuming `X` is a square invertible matrix, then
-`solve(X)` returns its inverse. For this assignment, one was to assume that the matrix supplied was always
+For this assignment, one was to assume that the matrix supplied was always
 invertible.  Note: when `<` is displayed the line is inputed into the command line, while if `#`is added it shows additional commentary.
 
 
