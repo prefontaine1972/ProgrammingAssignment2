@@ -92,13 +92,6 @@ getting cache data
 [1,]   -3  2.0
 [2,]    1 -0.5
 
-#try different matrix
-> a$set(matrix(c(1,2,4,5), nrow =2, ncol = 2))
-> cacheSolve(a)
-           [,1]       [,2]
-[1,] -1.6666667  1.3333333
-[2,]  0.6666667 -0.3333333
-
 ```
 
 
